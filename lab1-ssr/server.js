@@ -11,7 +11,6 @@ const posts = Array.from({ length: 10 }, (_, i) => ({
 
 app.get('/', (req, res) => {
     const requestTime = new Date().toLocaleString();
-
     const html = `
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -29,7 +28,6 @@ app.get('/', (req, res) => {
   res.send(html);
 });
 
-app.listen(port, () => {
-  console.log(`SSR服务运行在 http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`SSR服务运行在端口 ${port}`);
 });
-
